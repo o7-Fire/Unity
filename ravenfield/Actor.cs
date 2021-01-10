@@ -8,7 +8,7 @@ public class Actor: Hurtable {
     }
   }
   public virtual void Update() {
-    if (this.IsSeated()) {//Make sure inside a vehicle
+    if (!this.aiControlled && this.IsSeated()) {//Make sure inside a vehicle and not an AI
       Vehicle vehicle = this.seat.vehicle;
       if (vehicle != null) {
         vehicle.maxHealth = 1200 f;
