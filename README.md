@@ -10,6 +10,7 @@ btw we once bypassed battleye
 - find the code
 ![geh](https://cdn.discordapp.com/attachments/796869250533818418/797656066007629865/unknown.png)
 - add the code then compile
+![geh](https://cdn.discordapp.com/attachments/796869250533818418/797658679884906496/unknown.png)
 - save
 ![geh](https://cdn.discordapp.com/attachments/796869250533818418/797656275894140937/unknown.png)
 <h4 align="center">Visitor's count :eyes:</h4>
