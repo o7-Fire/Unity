@@ -16,6 +16,8 @@ public class Actor: Hurtable {
     //no need to edit this
     if (this.activeWeapon.configuration.projectilePrefab != null) this.activeWeapon.projectileSpeed = this.activeWeapon.configuration.projectilePrefab.GetComponent < Projectile > ().configuration.speed * this.speedMultiplier;
     else this.activeWeapon.projectileSpeed = 100 f * this.speedMultiplier;
+    if(IsSeated())//if in a vehicle
+			activeWeapon.configuration.projectilesPerShot = 4;//current weapon
   }
   public virtual void Update() {
     if (!this.aiControlled && this.IsSeated()) { //Make sure inside a vehicle and not an AI
