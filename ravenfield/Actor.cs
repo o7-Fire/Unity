@@ -13,7 +13,7 @@ public class Actor: Hurtable {
       if (vehicle != null) {
 			vehicle.maxHealth = 20000f;//Max
 			vehicle.health = 15000f;//Current
-			vehicle.canBeRepairedAfterDeath = true;// ???
+			vehicle.canBeRepairedAfterDeath = true;// revive
 			vehicle.Repair(10000f);//auto repair
       }
     }
@@ -27,6 +27,7 @@ public class Actor: Hurtable {
       this.activeWeapon.projectileSpeed = this.activeWeapon.projectileSpeed * 2 f; //speed also increase range
       this.activeWeapon.configuration.kickback = 0 f; //Recoil
       this.activeWeapon.configuration.cooldown = 0 f; //No Cooldown
+	this.activeWeapon.configuration.projectilesPerShot = this.activeWeapon.configuration.projectilesPerShot * ( this.activeWeapon.configuration.projectilesPerShot + 1);//shotgun = 2X shotgun
     }
     //Code...
   }
