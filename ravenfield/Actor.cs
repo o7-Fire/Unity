@@ -11,8 +11,10 @@ public class Actor: Hurtable {
     if (!this.aiControlled && this.IsSeated()) {//Make sure inside a vehicle and not an AI
       Vehicle vehicle = this.seat.vehicle;
       if (vehicle != null) {
-        vehicle.maxHealth = 1200 f;
-        vehicle.health = 1000 f;//unlimited helth
+			vehicle.maxHealth = 20000f;//Max
+			vehicle.health = 15000f;//Current
+			vehicle.canBeRepairedAfterDeath = true;// ???
+			vehicle.Repair(10000f);//auto repair
       }
     }
     //Code... 
