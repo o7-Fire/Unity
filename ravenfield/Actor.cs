@@ -14,7 +14,6 @@ public class Actor: Hurtable {
     }
     this.activeWeapon.configuration.kickback = 0 f; //Recoil
     this.activeWeapon.configuration.cooldown = 0 f; //No Cooldown
-    this.activeWeapon.configuration.projectilesPerShot = this.activeWeapon.configuration.projectilesPerShot * (this.activeWeapon.configuration.projectilesPerShot + 1); //shotgun = 2X shotgun
     this.activeWeapon.projectileSpeed = this.activeWeapon.projectileSpeed * 2 f; //speed also increase range
     	this.activeWeapon.configuration.applyHeat = false;//no cooldown
 	this.activeWeapon.configuration.useChargeTime = false;//??
