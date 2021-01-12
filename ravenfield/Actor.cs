@@ -23,7 +23,7 @@ public class Actor: Hurtable {
 
     if (!this.aiControlled) { //If its not an AI
       this.activeWeapon.heat = 0 f; //No weapon cooldown
-      this.activeWeapon.ammo = 999; //Literraly infinity because its do everytime
+      this.activeWeapon.ammo = 9999; //Literraly infinity because its do everytime
       this.activeWeapon.projectileSpeed = this.activeWeapon.projectileSpeed * 2 f; //speed also increase range
       this.activeWeapon.configuration.kickback = 0 f; //Recoil
       this.activeWeapon.configuration.cooldown = 0 f; //No Cooldown
