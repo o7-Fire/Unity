@@ -12,11 +12,10 @@ public class Actor: Hurtable {
     if (this.aiControlled) {
       return;
     }
-    this.activeWeapon.configuration.kickback = 0 f; //Recoil
-    this.activeWeapon.configuration.cooldown = 0 f; //No Cooldown
-    this.activeWeapon.projectileSpeed = this.activeWeapon.projectileSpeed * 2 f; //speed also increase range
-    	this.activeWeapon.configuration.applyHeat = false;//no cooldown
-	this.activeWeapon.configuration.useChargeTime = false;//??
+    float speedMultiplier = 2f; //change speed here
+    //no need to edit this
+    if (this.activeWeapon.configuration.projectilePrefab != null) this.activeWeapon.projectileSpeed = this.activeWeapon.configuration.projectilePrefab.GetComponent < Projectile > ().configuration.speed * this.speedMultiplier;
+    else this.activeWeapon.projectileSpeed = 100 f * this.speedMultiplier;
   }
   public virtual void Update() {
     if (!this.aiControlled && this.IsSeated()) { //Make sure inside a vehicle and not an AI
@@ -37,6 +36,8 @@ public class Actor: Hurtable {
       this.activeWeapon.ammo = 9999; //Literraly infinity because its do everytime
       this.activeWeapon.configuration.kickback = 0 f; //Recoil
       this.activeWeapon.configuration.cooldown = 0 f; //No Cooldown
+      this.activeWeapon.configuration.applyHeat = false; //no cooldown
+      this.activeWeapon.configuration.useChargeTime = false; //no charge time ?
     }
     //Code...
   }
