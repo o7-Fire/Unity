@@ -49,7 +49,7 @@ public class Actor: Hurtable {
   }
 	
   private void UpdateMovement(float dt){
-		if (!this.aiControlled && this.IsSwimming())
+		if (!this.aiControlled && this.immersedInWater)
 		{
 			this.movement = Vector2.Lerp(this.movement, zero, 20f * dt);
 		}	  
