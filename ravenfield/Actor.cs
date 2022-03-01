@@ -33,7 +33,7 @@ public class Actor: Hurtable {
   }
   private void UpdateWeapon() {
 
-    if (!this.aiControlled) { //If its not an AI
+    if (!this.aiControlled || (this.IsSeated() && this.seat.HasActiveWeaponNonHorn())) { //If its not an AI
       this.activeWeapon.heat = 0 f; //No weapon cooldown
       this.activeWeapon.ammo = 9999; //Literraly infinity because its do everytime
       this.activeWeapon.configuration.kickback = 0 f; //Recoil
