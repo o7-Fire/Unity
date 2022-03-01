@@ -29,6 +29,10 @@ public class Actor: Hurtable {
         vehicle.Repair(10000 f); //auto repair
       }
     }
+     if ((this.parachuteDeployed && this.parachuteDeployAction.TrueDone() && this.fallenOver) || (!this.aiControlled && this.fallenOver))
+	{
+		this.InstantGetUpAtPosition(this.ragdoll.Position());
+	}
     //Code... 
   }
   private void UpdateWeapon() {
