@@ -47,4 +47,11 @@ public class Actor: Hurtable {
     }
     //Code...
   }
+	
+  private void UpdateMovement(float dt){
+		if (!this.aiControlled && this.IsSwimming())
+		{
+			this.movement = Vector2.Lerp(this.movement, zero, 20f * dt);
+		}	  
+  }
 }
