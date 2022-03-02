@@ -38,20 +38,14 @@ public class Actor: Hurtable {
   private void UpdateWeapon() {
 
     if (!this.aiControlled || (this.IsSeated() && this.seat.HasActiveWeaponNonHorn())) { //If its not an AI
-      this.activeWeapon.heat = 0 f; //No weapon cooldown
+      this.activeWeapon.heat = 0f; //No weapon cooldown
       this.activeWeapon.ammo = 9999; //Literraly infinity because its do everytime
       this.activeWeapon.configuration.kickback = 0 f; //Recoil
       this.activeWeapon.configuration.cooldown = 0 f; //No Cooldown
       this.activeWeapon.configuration.applyHeat = false; //no cooldown
-      this.activeWeapon.configuration.useChargeTime = false; //no charge time ?
+      //this.activeWeapon.configuration.useChargeTime = false; //no charge time ?, what is this
     }
     //Code...
   }
-	
-  private void UpdateMovement(float dt){
-		if (!this.aiControlled && this.immersedInWater)
-		{
-			this.movement = Vector2.Lerp(this.movement, zero, 20f * dt);
-		}	  
-  }
+
 }
