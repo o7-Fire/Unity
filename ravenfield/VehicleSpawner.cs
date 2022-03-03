@@ -1,6 +1,10 @@
 public class VehicleSpawner : MonoBehaviour{
-    public bool HasAvailableVehicle(){
-        return true;
+    private void Awake(){
+
+	if (this.respawnType != VehicleSpawner.RespawnType.Never)
+	{
+		this.respawnType = VehicleSpawner.RespawnType.AfterMoved;
+    }
     }
     private void StartSpawnCountdown(){
         base.CancelInvoke();
