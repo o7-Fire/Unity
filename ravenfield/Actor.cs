@@ -12,12 +12,12 @@ public class Actor: Hurtable {
     if (this.aiControlled) {
       return;
     }
-    float speedMultiplier = 2f; //change speed here
+    float speedMultiplier = 2 f; //change speed here
     //no need to edit this
     if (this.activeWeapon.configuration.projectilePrefab != null) this.activeWeapon.projectileSpeed = this.activeWeapon.configuration.projectilePrefab.GetComponent < Projectile > ().configuration.speed * this.speedMultiplier;
     else this.activeWeapon.projectileSpeed = 100 f * this.speedMultiplier;
-    if(IsSeated())//if in a vehicle
-			activeWeapon.configuration.projectilesPerShot = 4;//current weapon
+    if (IsSeated()) //if in a vehicle
+      activeWeapon.configuration.projectilesPerShot = 4; //current weapon
   }
   public virtual void Update() {
     if (!this.aiControlled && this.IsSeated()) { //Make sure inside a vehicle and not an AI
@@ -29,16 +29,15 @@ public class Actor: Hurtable {
         vehicle.Repair(10000 f); //auto repair
       }
     }
-     if ((this.parachuteDeployed && this.parachuteDeployAction.TrueDone() && this.fallenOver) || (!this.aiControlled && this.fallenOver))
-	{
-		this.InstantGetUpAtPosition(this.ragdoll.Position());
-	}
+    if ((this.parachuteDeployed && this.parachuteDeployAction.TrueDone() && this.fallenOver) || (!this.aiControlled && this.fallenOver)) {
+      this.InstantGetUpAtPosition(this.ragdoll.Position());
+    }
     //Code... 
   }
   private void UpdateWeapon() {
 
     if (!this.aiControlled || (this.IsSeated() && this.seat.HasActiveWeaponNonHorn())) { //If its not an AI
-      this.activeWeapon.heat = 0f; //No weapon cooldown
+      this.activeWeapon.heat = 0 f; //No weapon cooldown
       this.activeWeapon.ammo = 9999; //Literraly infinity because its do everytime
       this.activeWeapon.configuration.kickback = 0 f; //Recoil
       this.activeWeapon.configuration.cooldown = 0 f; //No Cooldown
